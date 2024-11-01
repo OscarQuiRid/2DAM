@@ -1,0 +1,226 @@
+/* === Estilos Globales === */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e9f1f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* === Estilos de Botones de Navegación === */
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .nav-buttons .btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-buttons .btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* === Estilos de las Secciones === */
+  .section {
+    display: none; /* Solo se mostrará la sección seleccionada */
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  /* === Estilos de la Rejilla de Datos (Tabla) === */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-action-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .table-action-buttons .btn-edit {
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .table-action-buttons .btn-delete {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .table-action-buttons .btn-edit:hover {
+    background-color: #e59400;
+  }
+  
+  .table-action-buttons .btn-delete:hover {
+    background-color: #e53935;
+  }
+  
+  /* === Estilos del Formulario === */
+  #formulario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Cambiado para que los elementos se alineen en columna */
+  }
+  
+  #formulario label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  #formulario input,
+  #formulario select,
+  #formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  #formulario input:focus,
+  #formulario select:focus,
+  #formulario textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  #formulario .btn-submit {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  #formulario .btn-submit:hover {
+    background-color: #45a049;
+  }
+  
+  /* === Estilos de la Inyección SQL === */
+  .sql-injection {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sql-injection h3 {
+    font-size: 1.2em;
+    color: #f44336;
+    text-align: center;
+  }
+  
+  .sql-injection textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+  }
+  
+  .sql-injection .btn-execute {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .sql-injection .btn-execute:hover {
+    background-color: #e53935;
+  }
+  
+  /* === Mensajes de Éxito y Error === */
+  .message {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .message.success {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .message.error {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
