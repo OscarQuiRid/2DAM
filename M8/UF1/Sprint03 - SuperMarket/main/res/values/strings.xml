@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Practica03Supermarket</string>
+    <string name="title_practica_recycler_view">Practica RecicledView</string>
+    <string name="boton_mas">+</string>
+    <string name="boton_menos">-</string>
+    <string name="title_cesta">Cesta</string>
+    <string name="text_total">Total: €</string>
+    <string name="hint_cero">0</string>
+    <string name="euros_kg">€ kg</string>
+    <string name="fruit_name">fruit_name</string>
+    <string name="image_description">fruit_img</string>
 </resources>

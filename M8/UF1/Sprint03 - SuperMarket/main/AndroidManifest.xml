@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Practica03Supermarket"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity_cesta"
+            android:exported="false" />
+        <activity
             android:name=".view_fruits"
             android:exported="false" />
         <activity
