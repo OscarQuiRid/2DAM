@@ -1,0 +1,41 @@
+<CARTA>
+  <GRUP>
+    <NOM>Entrants</NOM>
+    <PLAT>
+      <NOM>Braves</NOM>
+      <DESCRIPCIO>Mitges llunes de patata, fregides amb salsa brava lleugerament picant.</DESCRIPCIO>
+      <PREU>3.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Olives</NOM>
+      <DESCRIPCIO>Olives verdes marinades amb herbes mediterrànies.</DESCRIPCIO>
+      <PREU>2.00</PREU>
+    </PLAT>
+  </GRUP>
+  <GRUP>
+    <NOM>Principals</NOM>
+    <PLAT>
+      <NOM>Fideuà</NOM>
+      <DESCRIPCIO>Plat típic valencià amb fideus i marisc.</DESCRIPCIO>
+      <PREU>12.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Entrecot</NOM>
+      <DESCRIPCIO>Entrecot de vedella a la graella.</DESCRIPCIO>
+      <PREU>18.00</PREU>
+    </PLAT>
+  </GRUP>
+  <GRUP>
+    <NOM>Postres</NOM>
+    <PLAT>
+      <NOM>Flam</NOM>
+      <DESCRIPCIO>Flam de vainilla amb caramel.</DESCRIPCIO>
+      <PREU>4.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Tiramisú</NOM>
+      <DESCRIPCIO>Postre italià amb cafè i mascarpone.</DESCRIPCIO>
+      <PREU>5.50</PREU>
+    </PLAT>
+  </GRUP>
+</CARTA>
