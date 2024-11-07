@@ -11,6 +11,91 @@
       <DESCRIPCIO>Olives verdes marinades amb herbes mediterrànies.</DESCRIPCIO>
       <PREU>2.00</PREU>
     </PLAT>
+    <PLAT>
+      <NOM>Calamars a la Romana</NOM>
+      <DESCRIPCIO>Calamars fregits en tempura cruixent.</DESCRIPCIO>
+      <PREU>6.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Gambes a l’allet</NOM>
+      <DESCRIPCIO>Gambes saltejades amb all i julivert.</DESCRIPCIO>
+      <PREU>8.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Croquetes de Pernil</NOM>
+      <DESCRIPCIO>Croquetes casolanes de pernil ibèric.</DESCRIPCIO>
+      <PREU>4.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Ensalada Verda</NOM>
+      <DESCRIPCIO>Ensalada amb mesclum de fulles verdes, tomàquet i ceba.</DESCRIPCIO>
+      <PREU>3.80</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Pa amb Tomàquet</NOM>
+      <DESCRIPCIO>Pa de pagès amb tomàquet i oli d'oliva.</DESCRIPCIO>
+      <PREU>2.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Escopinyes a la Planxa</NOM>
+      <DESCRIPCIO>Escopinyes fresques a la planxa amb llimona.</DESCRIPCIO>
+      <PREU>7.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Formatge Manxego</NOM>
+      <DESCRIPCIO>Tall de formatge manxego curat.</DESCRIPCIO>
+      <PREU>5.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Nachos amb Guacamole</NOM>
+      <DESCRIPCIO>Nachos de blat de moro amb guacamole fresc.</DESCRIPCIO>
+      <PREU>4.20</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Pimientos del Padrón</NOM>
+      <DESCRIPCIO>Pebrots del Padrón a la planxa amb sal grossa.</DESCRIPCIO>
+      <PREU>3.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Escalivada</NOM>
+      <DESCRIPCIO>Assortiment de verdures rostides amb oli d'oliva.</DESCRIPCIO>
+      <PREU>4.70</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Esqueixada de Bacallà</NOM>
+      <DESCRIPCIO>Bacallà esqueixat amb tomàquet i pebrot.</DESCRIPCIO>
+      <PREU>7.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Musclos a la Marinera</NOM>
+      <DESCRIPCIO>Musclos cuinats amb salsa marinera.</DESCRIPCIO>
+      <PREU>6.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Carpaccio de Vedella</NOM>
+      <DESCRIPCIO>Llesques fines de vedella amb parmesà.</DESCRIPCIO>
+      <PREU>9.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Paté de Campanya</NOM>
+      <DESCRIPCIO>Paté casolà de campanya amb torrades.</DESCRIPCIO>
+      <PREU>5.20</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Tomàquets Cherry Marinats</NOM>
+      <DESCRIPCIO>Tomàquets cherry marinats amb herbes.</DESCRIPCIO>
+      <PREU>3.20</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Carxofes a la Brasa</NOM>
+      <DESCRIPCIO>Carxofes fetes a la brasa amb oli d'oliva.</DESCRIPCIO>
+      <PREU>6.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Ous Trencats</NOM>
+      <DESCRIPCIO>Ous trencats amb pernil ibèric i patates fregides.</DESCRIPCIO>
+      <PREU>7.80</PREU>
+    </PLAT>
   </GRUP>
   <GRUP>
     <NOM>Principals</NOM>
@@ -24,6 +109,76 @@
       <DESCRIPCIO>Entrecot de vedella a la graella.</DESCRIPCIO>
       <PREU>18.00</PREU>
     </PLAT>
+    <PLAT>
+      <NOM>Paella Mixta</NOM>
+      <DESCRIPCIO>Paella de carn i marisc amb safrà.</DESCRIPCIO>
+      <PREU>15.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Pollastre Rostit</NOM>
+      <DESCRIPCIO>Pollastre rostit amb patates.</DESCRIPCIO>
+      <PREU>10.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Bacallà a la Llauna</NOM>
+      <DESCRIPCIO>Bacallà amb all i oli a la llauna.</DESCRIPCIO>
+      <PREU>13.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Canelons de Carn</NOM>
+      <DESCRIPCIO>Canelons casolans de carn amb beixamel.</DESCRIPCIO>
+      <PREU>9.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Cassoleta de Marisc</NOM>
+      <DESCRIPCIO>Assortiment de marisc cuinat en cassoleta.</DESCRIPCIO>
+      <PREU>20.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Llobarro al Forn</NOM>
+      <DESCRIPCIO>Llobarro al forn amb patates i cebes.</DESCRIPCIO>
+      <PREU>16.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Filet de Vedella</NOM>
+      <DESCRIPCIO>Filet de vedella a la graella amb salsa de pebre.</DESCRIPCIO>
+      <PREU>22.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Espatlla de Xai</NOM>
+      <DESCRIPCIO>Espatlla de xai al forn amb herbes.</DESCRIPCIO>
+      <PREU>19.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Arròs Negre</NOM>
+      <DESCRIPCIO>Arròs amb tinta de calamar i all i oli.</DESCRIPCIO>
+      <PREU>14.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Truita de Patates</NOM>
+      <DESCRIPCIO>Truita de patates amb ceba caramel·litzada.</DESCRIPCIO>
+      <PREU>8.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Hamburguesa Gourmet</NOM>
+      <DESCRIPCIO>Hamburguesa amb formatge i alvocat.</DESCRIPCIO>
+      <PREU>12.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Calamars a la Planxa</NOM>
+      <DESCRIPCIO>Calamars frescos a la planxa amb llimona.</DESCRIPCIO>
+      <PREU>13.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Llom a la Brasa</NOM>
+      <DESCRIPCIO>Llom de porc a la brasa amb patates.</DESCRIPCIO>
+      <PREU>9.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Costelles de Xai</NOM>
+      <DESCRIPCIO>Costelles de xai a la brasa amb romaní.</DESCRIPCIO>
+      <PREU>15.50</PREU>
+    </PLAT>
   </GRUP>
   <GRUP>
     <NOM>Postres</NOM>
@@ -36,6 +191,46 @@
       <NOM>Tiramisú</NOM>
       <DESCRIPCIO>Postre italià amb cafè i mascarpone.</DESCRIPCIO>
       <PREU>5.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Sacher</NOM>
+      <DESCRIPCIO>Púding de xocolata intens.</DESCRIPCIO>
+      <PREU>5.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Cremat de Nata</NOM>
+      <DESCRIPCIO>Postre suau de nata amb cobertura cremada.</DESCRIPCIO>
+      <PREU>4.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Mousse de Llimona</NOM>
+      <DESCRIPCIO>Postre lleuger de mousse de llimona.</DESCRIPCIO>
+      <PREU>4.20</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Coulant de Xocolata</NOM>
+      <DESCRIPCIO>Pastís de xocolata amb nucli de xocolata fosa.</DESCRIPCIO>
+      <PREU>6.00</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Pastís de Formatge</NOM>
+      <DESCRIPCIO>Pastís de formatge al forn.</DESCRIPCIO>
+      <PREU>4.80</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Panna Cotta</NOM>
+      <DESCRIPCIO>Postre italià de nata cuita amb fruita.</DESCRIPCIO>
+      <PREU>4.30</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Sorbets</NOM>
+      <DESCRIPCIO>Sorbets de fruites fresques variades.</DESCRIPCIO>
+      <PREU>3.50</PREU>
+    </PLAT>
+    <PLAT>
+      <NOM>Brownie</NOM>
+      <DESCRIPCIO>Brownie de xocolata amb nous i gelat.</DESCRIPCIO>
+      <PREU>5.20</PREU>
     </PLAT>
   </GRUP>
 </CARTA>
