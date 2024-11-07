@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  #menu {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .GRUP {
+    margin-bottom: 20px;
+  }
+  
+  .GRUP .NOM {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #b33;
+  }
+  
+  .PLAT {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 4px solid #b33;
+  }
+  
+  .PLAT .NOM {
+    font-weight: bold;
+  }
+  
+  .PLAT .DESCRIPCIO {
+    font-style: italic;
+  }
+  
+  .PLAT .PREU {
+    color: #555;
+  }
+  
