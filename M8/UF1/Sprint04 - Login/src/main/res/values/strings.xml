@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Practica04-login-ddbb</string>
+    <string name="header_maintext">Welcome!!</string>
+    <string name="input_username">Username</string>
+    <string name="input_password">Password</string>
+    <string name="createAccount">Create Account</string>
+    <string name="forgotten">Lost Account?</string>
+    <string name="login_button">Login</string>
+    <string name="header_maintext2">Welcome!! username</string>
+
+    <string name="buttonExit">Exit</string>
+
+    <string name="attribute">Attribute</string>
+    <string name="errormsg">*</string>
+    <string name="inboxtext">AttributeInbox</string>
+
+    <string name="header_mainTextCreateAccount">Welcome New User</string>
+
+    <string name="header_mainTextRecoveryAccount">Recovery Account</string>
+
+    <string name="header_maintextError">Errors</string>
+    <string name="button_back">Back</string>
+    <string name="tabla_horaError">Hora del Error</string>
+    <string name="tabla_errorCode">Código de Error</string>
+
+    <string name="header_profile">Profile</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_cerrarSesion">Cerrar Sesion</string>
+    <string name="mostrar_password">Password</string>
+    <string name="mostrar_fecha">Fecha Actual</string>
+</resources>
