@@ -1,0 +1,27 @@
+<productos>
+    <producto>
+        <ID>101</ID>
+        <Nombre>Portátil Lenovo</Nombre>
+        <Categoría>Electrónica</Categoría>
+    </producto>
+    <producto>
+        <ID>102</ID>
+        <Nombre>Smartphone Samsung</Nombre>
+        <Categoría>Electrónica</Categoría>
+    </producto>
+    <producto>
+        <ID>103</ID>
+        <Nombre>Televisor Sony</Nombre>
+        <Categoría>Electrónica</Categoría>
+    </producto>
+    <producto>
+        <ID>104</ID>
+        <Nombre>Cafetera Nespresso</Nombre>
+        <Categoría>Electrodomésticos</Categoría>
+    </producto>
+    <producto>
+        <ID>105</ID>
+        <Nombre>Libro Python para Todos</Nombre>
+        <Categoría>Libros</Categoría>
+    </producto>
+</productos>

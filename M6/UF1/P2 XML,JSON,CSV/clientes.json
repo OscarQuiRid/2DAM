@@ -1,0 +1,32 @@
+[
+    {
+        "ID_Cliente": 1,
+        "Nombre": "Juan Pérez",
+        "Email": "juan.perez@example.com",
+        "Ciudad": "Madrid"
+    },
+    {
+        "ID_Cliente": 2,
+        "Nombre": "Laura García",
+        "Email": "laura.garcia@example.com",
+        "Ciudad": "Barcelona"
+    },
+    {
+        "ID_Cliente": 3,
+        "Nombre": "Carlos Fernández",
+        "Email": "carlos.fernandez@example.com",
+        "Ciudad": "Valencia"
+    },
+    {
+        "ID_Cliente": 4,
+        "Nombre": "Ana López",
+        "Email": "ana.lopez@example.com",
+        "Ciudad": "Madrid"
+    },
+    {
+        "ID_Cliente": 5,
+        "Nombre": "Sofía Martínez",
+        "Email": "sofia.martinez@example.com",
+        "Ciudad": "Sevilla"
+    }
+]
