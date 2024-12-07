@@ -1,0 +1,298 @@
+
+Carpeta ProyectoTienda es la api
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ddbb name -> tienda
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Codigo sql 
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CREATE TABLE Clientes (
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Apellidos VARCHAR(100),
+    CorreoElectronico VARCHAR(150) UNIQUE,
+    Telefono VARCHAR(15),
+    Direccion VARCHAR(255),
+    FechaRegistro DATE DEFAULT CURRENT_DATE,
+    Contraseña VARCHAR(255)
+);
+
+CREATE TABLE Roles (
+    RolID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE Empleados (
+    EmpleadoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Apellidos VARCHAR(100),
+    CorreoElectronico VARCHAR(150) UNIQUE,
+    Telefono VARCHAR(15),
+    Puesto VARCHAR(100),
+    FechaContratacion DATE DEFAULT CURRENT_DATE,
+    RolID INT,
+    FOREIGN KEY (RolID) REFERENCES Roles(RolID)
+);
+
+CREATE TABLE Categorias (
+    CategoriaID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE Productos (
+    ProductoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    Precio DECIMAL(10, 2),
+    Stock INT,
+    CategoriaID INT,
+    ImagenURL VARCHAR(255),
+    FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
+);
+
+CREATE TABLE MetodosDePago (
+    MetodoPagoID INT AUTO_INCREMENT PRIMARY KEY,
+    Metodo VARCHAR(50)
+);
+
+CREATE TABLE EstadosFactura (
+    EstadoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE EstadosPedido (
+    EstadoPedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE Facturas (
+    FacturaID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT,
+    MetodoPagoID INT,
+    EstadoID INT DEFAULT 1,
+    Fecha DATE DEFAULT CURRENT_DATE,
+    Total DECIMAL(10, 2),
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (MetodoPagoID) REFERENCES MetodosDePago(MetodoPagoID),
+    FOREIGN KEY (EstadoID) REFERENCES EstadosFactura(EstadoID)
+);
+
+CREATE TABLE Pedidos (
+    PedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT,
+    Fecha DATE DEFAULT CURRENT_DATE,
+    EstadoPedidoID INT,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (EstadoPedidoID) REFERENCES EstadosPedido(EstadoPedidoID)
+);
+
+CREATE TABLE DetalleFactura (
+    DetalleID INT AUTO_INCREMENT PRIMARY KEY,
+    FacturaID INT,
+    ProductoID INT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    Subtotal DECIMAL(10, 2),
+    IVA DECIMAL(5, 2) DEFAULT 21.00,  -- Campo IVA con valor por defecto 21%
+    Total DECIMAL(10, 2),  -- Total con IVA
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE Promociones (
+    PromocionID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    FechaInicio DATE,
+    FechaFin DATE,
+    Descuento DECIMAL(5, 2),
+    ImagenURL VARCHAR(255),
+    EstaActiva BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE CategoriasPromociones (
+    PromocionID INT,
+    CategoriaID INT,
+    FOREIGN KEY (PromocionID) REFERENCES Promociones(PromocionID),
+    FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
+);
+
+INSERT INTO Roles (Nombre) VALUES 
+('Administrador'), 
+('Encargado'), 
+('Empleado');
+
+INSERT INTO Categorias (Nombre) VALUES 
+('Camisetas'),
+('Pantalones'),
+('Calzado'),
+('Chaquetas');
+
+INSERT INTO MetodosDePago (Metodo) VALUES 
+('Tarjeta'), 
+('PayPal'), 
+('Bizum'),
+('Transferencia Bancaria');
+
+INSERT INTO EstadosFactura (Nombre) VALUES 
+('Pendiente de Pago'), 
+('Pago Aceptado'), 
+('Pago Cancelado');
+
+INSERT INTO EstadosPedido (Nombre) VALUES 
+('Pendiente de Envío'),
+('En Preparación'),
+('Enviado'),
+('Entregado');
+
+INSERT INTO Clientes (Nombre, Apellidos, CorreoElectronico, Telefono, Direccion, Contraseña) VALUES 
+('Juan', 'Pérez', 'juan.perez@email.com', '123456789', 'Calle Ficticia 123', 'hash_de_contraseña1'),
+('Ana', 'García', 'ana.garcia@email.com', '987654321', 'Avenida Principal 456', 'hash_de_contraseña2');
+
+INSERT INTO Promociones (Nombre, Descripcion, FechaInicio, FechaFin, Descuento, ImagenURL, EstaActiva) VALUES
+('Descuento Verano', 'Descuento del 20% en productos seleccionados', '2024-06-01', '2024-08-31', 20.00, 'https://example.com/promocion.jpg', TRUE);
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DISEÑO DBDESIGN
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Table Clientes {
+    ClienteID int [pk]
+    Nombre varchar(100)
+    Apellidos varchar(100)
+    CorreoElectronico varchar(150) [unique]
+    Telefono varchar(15)
+    Direccion varchar(255)
+    FechaRegistro date [default: 'CURRENT_DATE']
+    Contraseña varchar(255)
+}
+
+Table Roles {
+    RolID int [pk]
+    Nombre varchar(50) [unique]
+}
+
+Table Empleados {
+    EmpleadoID int [pk]
+    Nombre varchar(100)
+    Apellidos varchar(100)
+    CorreoElectronico varchar(150) [unique]
+    Telefono varchar(15)
+    Puesto varchar(100)
+    FechaContratacion date [default: 'CURRENT_DATE']
+    RolID int
+}
+
+Table Categorias {
+    CategoriaID int [pk]
+    Nombre varchar(100) [unique]
+}
+
+Table Productos {
+    ProductoID int [pk]
+    Nombre varchar(100)
+    Descripcion text
+    Precio decimal(10, 2)
+    Stock int
+    CategoriaID int
+    ImagenURL varchar(255)
+}
+
+Table MetodosDePago {
+    MetodoPagoID int [pk]
+    Metodo varchar(50)
+}
+
+Table EstadosFactura {
+    EstadoID int [pk]
+    Nombre varchar(50) [unique]
+}
+
+Table EstadosPedido {
+    EstadoPedidoID int [pk]
+    Nombre varchar(50) [unique]
+}
+
+Table Facturas {
+    FacturaID int [pk]
+    ClienteID int
+    MetodoPagoID int
+    EstadoID int [default: 1]
+    Fecha date [default: 'CURRENT_DATE']
+    Total decimal(10, 2)
+}
+
+Table Pedidos {
+    PedidoID int [pk]
+    ClienteID int
+    Fecha date [default: 'CURRENT_DATE']
+    EstadoPedidoID int
+}
+
+Table DetalleFactura {
+    DetalleID int [pk]
+    FacturaID int
+    ProductoID int
+    Cantidad int
+    PrecioUnitario decimal(10, 2)
+    Subtotal decimal(10, 2)
+    IVA decimal(5, 2) [default: 21.00] -- Campo IVA con valor por defecto 21%
+    Total decimal(10, 2) -- Total con IVA
+}
+
+Table Promociones {
+    PromocionID int [pk]
+    Nombre varchar(100)
+    Descripcion text
+    FechaInicio date
+    FechaFin date
+    Descuento decimal(5, 2)
+    ImagenURL varchar(255)
+    EstaActiva boolean [default: false]
+}
+
+Table CategoriasPromociones {
+    PromocionID int
+    CategoriaID int
+}
+
+Ref: Empleados.RolID > Roles.RolID
+Ref: Productos.CategoriaID > Categorias.CategoriaID
+Ref: Facturas.ClienteID > Clientes.ClienteID
+Ref: Facturas.MetodoPagoID > MetodosDePago.MetodoPagoID
+Ref: Facturas.EstadoID > EstadosFactura.EstadoID
+Ref: Pedidos.ClienteID > Clientes.ClienteID
+Ref: Pedidos.EstadoPedidoID > EstadosPedido.EstadoPedidoID
+Ref: DetalleFactura.FacturaID > Facturas.FacturaID
+Ref: DetalleFactura.ProductoID > Productos.ProductoID
+Ref: CategoriasPromociones.PromocionID > Promociones.PromocionID
+Ref: CategoriasPromociones.CategoriaID > Categorias.CategoriaID
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TEST CURL
++++++++++++++++++++++++++++++++++++++++++++++++++
+# Registrar Cliente
+curl -X POST -d "correo=administrador&contraseña=administrador" "http://localhost/ProyectoTienda/api.php?accion=registrarCliente"
+
+# Actualizar Cliente
+curl -X POST -d "clienteID=1&nombre=Juan&apellidos=Pérez&telefono=1234567890&direccion=Calle Falsa 123" "http://localhost/ProyectoTienda/api.php?accion=actualizarCliente"
+
+# Obtener Cliente
+curl -X GET "http://localhost/ProyectoTienda/api.php?accion=obtenerCliente&clienteID=1"
+
+# Obtener Productos
+curl -X GET "http://localhost/ProyectoTienda/api.php?accion=obtenerProductos"
+
+# Obtener Categorías
+curl -X GET "http://localhost/ProyectoTienda/api.php?accion=obtenerCategorias"
+
+# Obtener Promociones
+curl -X GET "http://localhost/ProyectoTienda/api.php?accion=obtenerPromociones"
+
+# Realizar Pedido
+curl -X POST -d "clienteID=1&productos=[{\"id\":1,\"cantidad\":2,\"precio\":19.99},{\"id\":3,\"cantidad\":1,\"precio\":29.99}]&metodoPagoID=1" "http://localhost/ProyectoTienda/api.php?accion=realizarPedido"
+
+# Actualizar Estado Pedido
+curl -X POST -d "pedidoID=1&estadoPedidoID=2" "http://localhost/ProyectoTienda/api.php?accion=actualizarEstadoPedido"
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
