@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo para el TextInputLayout -->
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Color de fondo del cuadro -->
+        <item name="boxBackgroundColor">@color/gray_light</item>
+        <!-- Color del borde cuando está activo e inactivo -->
+        <item name="boxStrokeColor">@color/gray</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <!-- Tamaño y forma de las esquinas -->
+        <item name="shapeAppearance">@style/CustomShapeAppearance</item>
+        <!-- Color del texto del hint -->
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
+    <!-- Estilo para el TextInputEditText -->
+    <style name="CustomTextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <!-- Color del texto -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Fuente del texto -->
+        <item name="android:textSize">24sp</item>
+        <!-- Espaciado interno -->
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- Estilo de las esquinas para el cuadro del input -->
+    <style name="CustomShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
+    </style>
+
+        <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+            <item name="android:fontFamily">@font/ar_one_sans_bold</item>
+            <item name="android:textSize">14sp</item>
+            <item name="android:textStyle">bold</item>
+            <item name="android:textColor">@color/black</item>
+
+        </style>
+</resources>

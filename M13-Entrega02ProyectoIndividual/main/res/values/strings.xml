@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">TiendaRopaProjecto</string>
+
+    <string name="finder">Buscar</string>
+    <string name="saludo">Looks &amp; co.</string>
+    <string name="nombre_usuario">--USERNAME--</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="home">Home</string>
+    <string name="heart">Favorites</string>
+    <string name="bell">Notifications</string>
+    <string name="profile">Profile</string>
+
+    <string name="desc_button_return">Return</string>
+
+    <string name="desc_image_button">Image button description</string>
+    <string name="desc_image_button2">Heart button description</string>
+    <string name="desc_image_button3">Shopping cart button description</string>
+
+    <string name="seguir_compradno">Seguir Comprando</string>
+    <string name="fin_compra">Finalizar Compra</string>
+    <string name="title_activity_rv_favoritos">RvFavoritos</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+
+    <string name="username">"Usuario"</string>
+    <string name="password">"Contraseña"</string>
+    <string name="botonLogin">"Iniciar Sesion"</string>
+    <string name="recoveryButton">"Recuperar Contraseña "</string>
+    <string name="errorLogin">"Error en las credenciales "</string>
+
+    <string name="promocion_imagen">"imagen promocion"</string>
+
+    <string name="precio">"Precio"</string>
+    <string name="nombre">"Nombre"</string>
+</resources>

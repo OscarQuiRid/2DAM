@@ -1,0 +1,188 @@
+Carpeta ProyectoTienda es la api asi que lo colocamos tal cual es htdoc
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ddbb name -> tienda
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Codigo sql 
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CREATE TABLE Clientes (
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Apellidos VARCHAR(100),
+    CorreoElectronico VARCHAR(150) UNIQUE,
+    Telefono VARCHAR(15),
+    Direccion VARCHAR(255),
+    FechaRegistro DATE DEFAULT CURRENT_DATE,
+    Contraseña VARCHAR(255)
+);
+
+CREATE TABLE Roles (
+    RolID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE Empleados (
+    EmpleadoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Apellidos VARCHAR(100),
+    CorreoElectronico VARCHAR(150) UNIQUE,
+    Telefono VARCHAR(15),
+    Puesto VARCHAR(100),
+    FechaContratacion DATE DEFAULT CURRENT_DATE,
+    RolID INT,
+    FOREIGN KEY (RolID) REFERENCES Roles(RolID)
+);
+
+CREATE TABLE Categorias (
+    CategoriaID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE Productos (
+    ProductoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    Precio DECIMAL(10, 2),
+    Stock INT,
+    CategoriaID INT,
+    ImagenURL VARCHAR(255),
+    FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
+);
+
+CREATE TABLE MetodosDePago (
+    MetodoPagoID INT AUTO_INCREMENT PRIMARY KEY,
+    Metodo VARCHAR(50)
+);
+
+CREATE TABLE EstadosFactura (
+    EstadoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE EstadosPedido (
+    EstadoPedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE Facturas (
+    FacturaID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT,
+    MetodoPagoID INT,
+    EstadoID INT DEFAULT 1,
+    Fecha DATE DEFAULT CURRENT_DATE,
+    Total DECIMAL(10, 2),
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (MetodoPagoID) REFERENCES MetodosDePago(MetodoPagoID),
+    FOREIGN KEY (EstadoID) REFERENCES EstadosFactura(EstadoID)
+);
+
+CREATE TABLE Pedidos (
+    PedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT,
+    Fecha DATE DEFAULT CURRENT_DATE,
+    EstadoPedidoID INT,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (EstadoPedidoID) REFERENCES EstadosPedido(EstadoPedidoID)
+);
+
+CREATE TABLE DetalleFactura (
+    DetalleID INT AUTO_INCREMENT PRIMARY KEY,
+    FacturaID INT,
+    ProductoID INT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    Subtotal DECIMAL(10, 2),
+    IVA DECIMAL(5, 2) DEFAULT 21.00,  -- Campo IVA con valor por defecto 21%
+    Total DECIMAL(10, 2),  -- Total con IVA
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE Promociones (
+    PromocionID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    FechaInicio DATE,
+    FechaFin DATE,
+    Descuento DECIMAL(5, 2),
+    ImagenURL VARCHAR(255),
+    EstaActiva BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE CategoriasPromociones (
+    PromocionID INT,
+    CategoriaID INT,
+    FOREIGN KEY (PromocionID) REFERENCES Promociones(PromocionID),
+    FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
+);
+
+INSERT INTO Roles (Nombre) VALUES 
+('Administrador'), 
+('Encargado'), 
+('Empleado');
+
+INSERT INTO Categorias (Nombre) VALUES 
+('Camisetas'),
+('Pantalones'),
+('Calzado'),
+('Chaquetas');
+
+INSERT INTO MetodosDePago (Metodo) VALUES 
+('Tarjeta'), 
+('PayPal'), 
+('Bizum'),
+('Transferencia Bancaria');
+
+INSERT INTO EstadosFactura (Nombre) VALUES 
+('Pendiente de Pago'), 
+('Pago Aceptado'), 
+('Pago Cancelado');
+
+INSERT INTO EstadosPedido (Nombre) VALUES 
+('Pendiente de Envío'),
+('En Preparación'),
+('Enviado'),
+('Entregado');
+
+INSERT INTO Clientes (Nombre, Apellidos, CorreoElectronico, Telefono, Direccion, Contraseña) VALUES 
+('Juan', 'Pérez', 'juan.perez@email.com', '123456789', 'Calle Ficticia 123', 'hash_de_contraseña1'),
+('Ana', 'García', 'ana.garcia@email.com', '987654321', 'Avenida Principal 456', 'hash_de_contraseña2');
+
+INSERT INTO Promociones (Nombre, Descripcion, FechaInicio, FechaFin, Descuento, ImagenURL, EstaActiva) VALUES
+('Descuento Verano', 'Descuento del 20% en productos seleccionados', '2024-06-01', '2024-08-31', 20.00, 'https://example.com/promocion.jpg', FALSE);
+INSERT INTO Promociones (Nombre, Descripcion, FechaInicio, FechaFin, Descuento, ImagenURL, EstaActiva) VALUES
+('Descuento Otoño', 'Descuento del 20% en productos seleccionados', '2024-06-01', '2024-08-31', 20.00, 'https://example.com/promocion.jpg', FALSE);
+
+INSERT INTO Promociones (Nombre, Descripcion, FechaInicio, FechaFin, Descuento, ImagenURL, EstaActiva) VALUES
+('Descuento Invierno', 'Descuento de hasta 50% en productos seleccionados', '2024-12-01', '2025-01-07', 50.00, 'http://10.0.2.2/ProyectoTienda/Img/descuentoNavidad.jpg', true);
+
+INSERT INTO Promociones (Nombre, Descripcion, FechaInicio, FechaFin, Descuento, ImagenURL, EstaActiva) VALUES
+('Descuento Primaveras', 'Descuento del 20% en productos seleccionados', '2024-06-01', '2024-08-31', 20.00, 'https://example.com/promocion.jpg', FALSE);
+
+
+INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaID, ImagenURL) VALUES
+('Abrigo', 'Abrigo de plumón', 49.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo01.jpg'),
+('Abrigo Largo', 'abrigo largo acolchado', 54.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo02.jpg'),
+('Abrigo Largo', 'abrigo largo elegante', 69.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo03.jpg'),
+('Americana', 'Americana negra', 28.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo04.jpg'),
+('Chupa beige', 'chupa beige con borrego to calentita', 44.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo05.jpg'),
+('Jersey', 'Jersey gris de abuelo', 29.90, 100, 4, 'http://10.0.2.2/ProyectoTienda/Img/abrigo06.jpg'),
+('Cinturón', 'Cinturón dNnegro', 23.90, 100, 6, 'http://10.0.2.2/ProyectoTienda/Img/accesorio01.jpg'),
+('Guantes', 'Guantes calentitos', 19.90, 100, 6, 'http://10.0.2.2/ProyectoTienda/Img/accesorio02.jpg'),
+('Calcetines', 'Calcetines ejecutivos bien hermosos', 4, 100, 6, 'http://10.0.2.2/ProyectoTienda/Img/accesorio03.jpg'),
+('Gafas', 'gafas de sol full postu', 30.90, 100, 6, 'http://10.0.2.2/ProyectoTienda/Img/accesorio04.jpg'),
+('Boina', 'boina elegante perfecta para ir a hacer el notas el domingo al pueblo', 26.90, 100, 6, 'http://10.0.2.2/ProyectoTienda/Img/accesorio05.jpg'),
+('Bota', 'botas negras', 99.90, 100, 3, 'http://10.0.2.2/ProyectoTienda/Img/calzado01.jpg'),
+('Zapato', 'zapato elegante para parecer mas que los demás',69.90, 100, 3, 'http://10.0.2.2/ProyectoTienda/Img/calzado02.jpg'),
+('Zapatillas', 'zapatilla de diario color oscuro', 39.90, 100, 3, 'http://10.0.2.2/ProyectoTienda/Img/calzado03.jpg'),
+('Bota', 'bota marrón bien guapa y elegante',99.90, 100, 3, 'http://10.0.2.2/ProyectoTienda/Img/calzado04.jpg'),
+('Zapatillas Blancas', 'zapatillas blancas para los que no le da miedo mancharse', 39.90, 100, 3, 'http://10.0.2.2/ProyectoTienda/Img/calzado05.jpg'),
+('Tejano', 'tejano azul', 39.90, 100, 2, 'http://10.0.2.2/ProyectoTienda/Img/pantalon01.jpg'),
+('Tejano', 'tejano azul claro', 39.90, 100, 2, 'http://10.0.2.2/ProyectoTienda/Img/pantalon02.jpg'),
+('Tejano', 'tejano azul algo oscuro', 39.90, 100, 2, 'http://10.0.2.2/ProyectoTienda/Img/pantalon03.jpg'),
+('Tejano', 'tejano azul oscuro', 39.90, 100, 2, 'http://10.0.2.2/ProyectoTienda/Img/pantalon04.jpg'),
+('Tejano', 'tejano gris', 39.90, 100, 2, 'http://10.0.2.2/ProyectoTienda/Img/pantalon05.jpg'),
+('Jersey', 'Jersey gris de joven', 29.90, 100, 1, 'http://10.0.2.2/ProyectoTienda/Img/superior01.jpg'),
+('Camisa', 'camisa negra to elegante', 35.90, 100, 1, 'http://10.0.2.2/ProyectoTienda/Img/superior02.jpg'),
+('Camiseta', 'camiseta negra manga corta', 19.90, 100, 1, 'http://10.0.2.2/ProyectoTienda/Img/superior03.jpg'),
+('Sudadera', 'sudadera blanca con capucha y cremallera ', , 100, 1, 'http://10.0.2.2/ProyectoTienda/Img/superior04.jpg'),
+('Camisa ', 'camisa color gris oscuro feo', 29.90, 100, 1, 'http://10.0.2.2/ProyectoTienda/Img/superior05.jpg');
