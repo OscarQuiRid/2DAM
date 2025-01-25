@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- RecyclerView for displaying songs -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Music Player (visible when a song is selected) -->
+    <LinearLayout
+        android:id="@+id/musicPlayerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#f0f0f0"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Song Cover -->
+        <ImageView
+            android:id="@+id/songCover"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Song Cover"
+            android:src="@drawable/ic_music_note" />
+
+        <!-- Right section (Buttons and SeekBar) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Song Title -->
+            <TextView
+                android:id="@+id/songTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Song Title"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Control Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/prevButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Previous"
+                    android:src="@drawable/retroceso" />
+
+                <ImageButton
+                    android:id="@+id/playPauseButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Play/Pause"
+                    android:src="@drawable/play" />
+
+                <ImageButton
+                    android:id="@+id/nextButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Next"
+                    android:src="@drawable/adelante" />
+            </LinearLayout>
+
+            <!-- SeekBar and Duration -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/songRemainingTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="100" />
+
+                <TextView
+                    android:id="@+id/songTotalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="00:00"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
