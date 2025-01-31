@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <entrantes>
+        <plato>Ensalada César</plato>
+        <plato>Gazpacho</plato>
+        <plato>Bruschetta</plato>
+        <plato>Calamares a la romana</plato>
+        <plato>Patatas bravas</plato>
+    </entrantes>
+    <primeros>
+        <plato>Paella</plato>
+        <plato>Spaghetti Carbonara</plato>
+        <plato>Lasagna</plato>
+        <plato>Risotto de setas</plato>
+        <plato>Sopa de marisco</plato>
+    </primeros>
+    <segundos>
+        <plato>Solomillo de ternera</plato>
+        <plato>Pollo al curry</plato>
+        <plato>Lubina al horno</plato>
+        <plato>Costillas de cerdo</plato>
+        <plato>Hamburguesa gourmet</plato>
+    </segundos>
+    <postres>
+        <plato>Tiramisú</plato>
+        <plato>Flan de huevo</plato>
+        <plato>Helado de vainilla</plato>
+        <plato>Brownie con nueces</plato>
+        <plato>Fruta fresca</plato>
+    </postres>
+    <bebidas>
+        <plato>Coca-Cola</plato>
+        <plato>Agua mineral</plato>
+        <plato>Jugo de naranja</plato>
+        <plato>Cerveza</plato>
+        <plato>Té helado</plato>
+    </bebidas>
+    <vinos>
+        <plato>Vino tinto Rioja</plato>
+        <plato>Vino blanco Albariño</plato>
+        <plato>Cava</plato>
+        <plato>Vino rosado</plato>
+        <plato>Champagne</plato>
+    </vinos>
+</menu>
